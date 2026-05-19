@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Real car + camera flow" id="E7T16HehuZWTEyoOBPnR">
+    <mxGraphModel dx="1295" dy="973" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="THg6G6g7WD4j8b6x8YNC-12" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=15;fontStyle=1" value="How the pieces connect&#xa;(camera and car never talk to each other directly)" vertex="1">
+          <mxGeometry height="44" width="640" x="138" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="THg6G6g7WD4j8b6x8YNC-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;align=center;verticalAlign=middle;spacing=6" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Your Wi‑Fi network&lt;br&gt;Everything joins the same router&lt;/font&gt;" vertex="1">
+          <mxGeometry height="72" width="256" x="350" y="1390" as="geometry" />
+        </mxCell>
+        <mxCell id="THg6G6g7WD4j8b6x8YNC-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=0;fontSize=12;align=center;verticalAlign=middle;spacing=6" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Laptop&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;text-align: center;&quot;&gt;Is the brain of the system&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;text-align: center;&quot;&gt;Watches the camera feed&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;text-align: center;&quot;&gt;Sends drive commands to the car&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;text-align: center;&quot;&gt;Runs the dashboard (simulation)&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="96" width="320" x="318" y="1016" as="geometry" />
+        </mxCell>
+        <mxCell id="THg6G6g7WD4j8b6x8YNC-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;align=center;verticalAlign=middle;spacing=6" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;ESP32‑CAM (camera module)&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;• Only job: stream live video&lt;br&gt;• Open in browser: …/stream&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Firmware: esp32cam_stream.ino&lt;/font&gt;" vertex="1">
+          <mxGeometry height="112" width="260" x="80" y="1190" as="geometry" />
+        </mxCell>
+        <mxCell id="THg6G6g7WD4j8b6x8YNC-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=center;verticalAlign=middle;spacing=6" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;ESP32 on the RC car&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;• Moves the motors (and optional gyro)&lt;br&gt;• Web car: pages like /cmd and /status&lt;br&gt;• Alt setup: MQTT messages instead&lt;br&gt;Firmware: web sketch or draft2.ino&lt;/font&gt;" vertex="1">
+          <mxGeometry height="120" width="280" x="620" y="1186" as="geometry" />
+        </mxCell>
+        <mxCell id="THg6G6g7WD4j8b6x8YNC-17" edge="1" parent="1" source="THg6G6g7WD4j8b6x8YNC-14" style="endArrow=classic;html=1;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=11" target="THg6G6g7WD4j8b6x8YNC-15" value="Live video&#xa;(computer opens the stream)">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="378" y="1324" as="sourcePoint" />
+            <mxPoint x="428" y="1274" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="THg6G6g7WD4j8b6x8YNC-18" edge="1" parent="1" source="THg6G6g7WD4j8b6x8YNC-14" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=11" target="THg6G6g7WD4j8b6x8YNC-16" value="Drive commands &amp; feedback&#xa;(web buttons/API or MQTT)">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="478" y="1324" as="sourcePoint" />
+            <mxPoint x="528" y="1274" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="THg6G6g7WD4j8b6x8YNC-19" edge="1" parent="1" source="THg6G6g7WD4j8b6x8YNC-14" style="endArrow=none;dashed=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#999999;fontSize=10" target="THg6G6g7WD4j8b6x8YNC-13" value="over Wi‑Fi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="THg6G6g7WD4j8b6x8YNC-20" edge="1" parent="1" source="THg6G6g7WD4j8b6x8YNC-13" style="endArrow=none;dashed=1;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;strokeColor=#999999;fontSize=10" target="THg6G6g7WD4j8b6x8YNC-15" value="over Wi‑Fi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="THg6G6g7WD4j8b6x8YNC-21" edge="1" parent="1" source="THg6G6g7WD4j8b6x8YNC-13" style="endArrow=none;dashed=1;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;strokeColor=#999999;fontSize=10" target="THg6G6g7WD4j8b6x8YNC-16" value="over Wi‑Fi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="THg6G6g7WD4j8b6x8YNC-22" parent="1" style="text;html=1;strokeColor=none;fillColor=#f5f5f5;align=left;verticalAlign=middle;spacingLeft=12;spacingTop=8;spacingRight=12;spacingBottom=8;fontSize=12;fontColor=#333333;rounded=1" value="Takeaway: the camera board and the car board are not wired together. Your PC is the brain: it reads video from one IP and talks to the car on the other." vertex="1">
+          <mxGeometry height="52" width="836" x="70" y="1470" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
